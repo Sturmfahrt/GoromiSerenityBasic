@@ -1,4 +1,4 @@
-//Note i have copied and pasted this all and i am meerly going to study this and then discard this once i understand it and write something somewhat original. I am also using this project to learn Neovim on though i still will use vscode if i feel like it. also forgot that this is my first project that i am utilizing gitkraken instead of github desktop or vscode git integration.
+// Note i have copied and pasted this all and i am meerly going to study this and then discard this once i understand it and write something somewhat original. I am also using this project to learn Neovim on though i still will use vscode if i feel like it. also forgot that this is my first project that i am utilizing gitkraken instead of github desktop or vscode git integration.
 
 // Import all that is needed.
 use std::env;
@@ -11,12 +11,12 @@ use serenity::framework::standard::{StandardFramework, CommandResult};
 
 #[group]
 #[commands(ping)]
-struct General;
+struct General; // I have no idea what the point of this is.
 
 struct Handler;
 
 #[async_trait]
-impl EventHandler for Handler {}
+impl EventHandler for Handler {} // Implimenting the Serenity event handler into the Handler struct.
 
 #[tokio::main]
 async fn main() {
@@ -40,8 +40,8 @@ async fn main() {
 }
 
 #[command]
-async fn ping(ctx: &Context, msg: &Message) -> CommandResult {
-    msg.reply(ctx, "Pong!").await?;
+async fn ping(ctx: &Context, msg: &Message) -> CommandResult { // I dont know how this actually works.
+    msg.reply(ctx, "Pong!").await?; // Actually replys Pong
 
     println!("Received ping, Sending Pong!"); // output that the command has executed to console so i know what the fuck its doing.
     Ok(())
